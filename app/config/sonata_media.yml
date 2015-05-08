@@ -9,23 +9,32 @@ sonata_media:
             download:
                 mode: http # X-Sendfile | http
             providers:
-                - sonata.media.provider.dailymotion
+                #- sonata.media.provider.dailymotion
                 - sonata.media.provider.youtube
                 - sonata.media.provider.image
                 - sonata.media.provider.file
-                - sonata.media.provider.vimeo
+                #- sonata.media.provider.vimeo
 
             formats:
                 small: { width: 100, quality: 100}
                 big:   { width: 970 , quality: 100}
-
+                
         news:
             providers:
+                #- sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
                 - sonata.media.provider.image
 
             formats:
-                abstract: { width: 100, quality: 100}
-                wide:     { width: 820, quality: 100}
+                small: { width: 150 , quality: 95}
+                big:   { width: 500 , quality: 90}        
+#        news:
+#            providers:
+#                - sonata.media.provider.image
+#
+#            formats:
+#                abstract: { width: 100, quality: 100}
+#                wide:     { width: 820, quality: 100}
 
         sonata_collection:
             providers:
@@ -55,45 +64,62 @@ sonata_media:
     cdn:
         # define the public base url for the uploaded media
         server:
-            path:      %sonata_media.cdn.host%
+            path:      /uploads/media
 
     filesystem:
         # define where the uploaded file will be stored
         local:
-            directory:  %kernel.root_dir%/../web/uploads/media
+            directory:  %kernel.root_dir%/../public_html/uploads/media
             create:     true
 
     providers:
         # ...
         file:
+            allowed_extensions: ['mp4', 'flv']
+            allowed_mime_types: ['video/mp4', 'video/x-flv']
             # the resizer must be set to false, otherwhise this can delete icon files from the fs
             resizer:    false
         image:
+           allowed_extensions: ['jpg', 'png', 'gif', 'jpeg']
+           allowed_mime_types: ['image/pjpeg','image/jpeg','image/png','image/x-png', 'image/gif'] 
            thumbnail: sonata.media.thumbnail.format          # default value
 #           thumbnail: sonata.media.thumbnail.consumer.format # can be used to dispatch the resize action to async task
-#            thumbnail: sonata.media.thumbnail.liip_imagine    # use the LiipImagineBundle to resize the image
-        vimeo:
-            thumbnail: sonata.media.thumbnail.format          # default value
+#           thumbnail: sonata.media.thumbnail.liip_imagine    # use the LiipImagineBundle to resize the image
+#        vimeo:
+#            thumbnail: sonata.media.thumbnail.format          # default value
 #           thumbnail: sonata.media.thumbnail.consumer.format # can be used to dispatch the resize action to async task
 #           thumbnail: sonata.media.thumbnail.liip_imagine    # use the LiipImagineBundle to resize the image
         youtube:
             thumbnail: sonata.media.thumbnail.format          # default value
 #           thumbnail: sonata.media.thumbnail.consumer.format # can be used to dispatch the resize action to async task
-#           thumbnail: sonata.media.thumbnail.liip_imagine    # use the LiipImagineBundle to resize the image
-        dailymotion:
-            thumbnail: sonata.media.thumbnail.format          # default value
+#            thumbnail: sonata.media.thumbnail.liip_imagine    # use the LiipImagineBundle to resize the image
+#        dailymotion:
+#            thumbnail: sonata.media.thumbnail.format          # default value
 #           thumbnail: sonata.media.thumbnail.consumer.format # can be used to dispatch the resize action to async task
 #           thumbnail: sonata.media.thumbnail.liip_imagine    # use the LiipImagineBundle to resize the image
 
     pixlr:
-        enabled:  true
-        referrer: Demo - Sonata Project
-
+        enabled:  false
+        referrer: Demiware Project
+        #secret:   theSecretHash
     resizer:
         simple:
 #            mode:  outbound
             mode:  inset
 
+#liip_imagine:
+#    filter_sets:
+#        default_small:
+#            quality: 75
+#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+#            filters:
+#                thumbnail: { size: [100, 70], mode: outbound }
+#        default_big:
+#            quality: 75
+#            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+#            filters:
+#                thumbnail: { size: [500, 70], mode: outbound }
+                
 #
 # The LiipImagineBundle can be used if you want to convert on demand an image
 # to a specific format. (ie a controller render the file)

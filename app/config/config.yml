@@ -5,6 +5,8 @@ imports:
     - { resource: sonata_core.yml }
     - { resource: sonata_classification.yml }
     - { resource: sonata_media.yml }
+    - { resource: sonata_news.yml }
+    - { resource: sonata_formater.yml }
     #- { resource: sonata_translation.yml }
 
 framework:

@@ -41,9 +41,25 @@ class AppKernel extends Kernel
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
             
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             //new Sonata\TranslationBundle\SonataTranslationBundle(),
+            // ...
+            //new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Sonata\NewsBundle\SonataNewsBundle(),
+            //new Sonata\UserBundle\SonataUserBundle(),
+            //new Sonata\MediaBundle\SonataMediaBundle(),
+            //new Sonata\AdminBundle\SonataAdminBundle(),
+            //new Sonata\IntlBundle\SonataIntlBundle(),
+            new Sonata\FormatterBundle\SonataFormatterBundle(),
+            //new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            //new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            //new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            //new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            // ...
 
             new AppBundle\AppBundle(),
         );

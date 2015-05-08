@@ -4,7 +4,7 @@
 
 homepage:
     path:     /
-    defaults: { _controller: AppBundle:DefaultController:index }
+    defaults: { _controller: AppBundle:Default:index }
 
 #sonata_user:
 #    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
@@ -74,3 +74,11 @@ gallery:
 media:
     resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
     prefix: /media
+    
+sonata_media_pixlr:
+    resource: '@SonataMediaBundle/Resources/config/routing/pixlr.xml'
+    prefix: /admin/media
+    
+news:
+    resource: '@SonataNewsBundle/Resources/config/routing/news.xml'
+    prefix: /news    
