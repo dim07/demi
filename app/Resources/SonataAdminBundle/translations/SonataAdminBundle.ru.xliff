@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="sonata_administration">
                 <source>sonata_administration</source>
-                <target>Administration</target>
+                <target>Администрирование</target>
             </trans-unit>
             <trans-unit id="action_delete">
                 <source>action_delete</source>
@@ -402,6 +402,11 @@
                 <source>message_form_group_empty</source>
                 <target>message_form_group_empty</target>
             </trans-unit>
+            <trans-unit id="sonata_content">
+                <source>sonata_content</source>
+                <target>Контент</target>
+            </trans-unit>
+            
         </body>
     </file>
 </xliff>

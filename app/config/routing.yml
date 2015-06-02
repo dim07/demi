@@ -79,6 +79,6 @@ sonata_media_pixlr:
     resource: '@SonataMediaBundle/Resources/config/routing/pixlr.xml'
     prefix: /admin/media
     
-news:
-    resource: '@SonataNewsBundle/Resources/config/routing/news.xml'
-    prefix: /news    
+#news:
+#    resource: '@SonataNewsBundle/Resources/config/routing/news.xml'
+#    prefix: /news    

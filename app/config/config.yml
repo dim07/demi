@@ -6,9 +6,10 @@ imports:
     - { resource: sonata_admin.yml }
     - { resource: sonata_classification.yml }
     - { resource: sonata_media.yml }
-    - { resource: sonata_news.yml }
+#    - { resource: sonata_news.yml }
     - { resource: sonata_formater.yml }
     - { resource: sonata_block.yml }
+    - { resource: sonata_seo.yml }
     - { resource: assetic.yml }
     #- { resource: sonata_translation.yml }
 
@@ -100,65 +101,7 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
     
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        # Enable the SonataAdminBundle block
-        sonata.admin.block.admin_list:
-            contexts:   [admin]
-        sonata.user.block.menu:    # used to display the menu in profile pages
-        sonata.user.block.account: # used to display menu option (login option)
-#sonata_media:
-#    providers:
-#        file:
-#          allowed_extensions: ['mp4', 'flv']
-#          allowed_mime_types: ['video/mp4', 'video/x-flv']
-#        image:
-#          allowed_extensions: ['jpg', 'png', 'gif', 'jpeg']
-#          allowed_mime_types: ['image/pjpeg','image/jpeg','image/png','image/x-png', 'image/gif']
-#    # if you don't use default namespace configuration
-#    #class:
-#    #    media: MyVendor\MediaBundle\Entity\Media
-#    #    gallery: MyVendor\MediaBundle\Entity\Gallery
-#    #    gallery_has_media: MyVendor\MediaBundle\Entity\GalleryHasMedia
-#    default_context: default
-#    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr it is mandatory to choose one here
-#    default_context: default # you need to set a context
-#    contexts:
-#        default:  # the default context is mandatory
-#            providers:
-#                - sonata.media.provider.dailymotion
-#                - sonata.media.provider.youtube
-#                - sonata.media.provider.image
-#                - sonata.media.provider.file
-#
-#            formats:
-#                small: { width: 100 , quality: 70}
-#                big:   { width: 500 , quality: 70}
-#        sonata_collection:
-#            providers:
-#              - sonata.media.provider.image
-#
-#            formats:
-#                preview: { width: 100, quality: 100}
-#                wide:    { width: 820, quality: 100}
-#
-#        sonata_category:
-#            providers:
-#              - sonata.media.provider.image
-#
-#            formats:
-#                preview: { width: 100, quality: 100}
-#                wide:    { width: 820, quality: 100}        
-#
-#    cdn:
-#        server:
-#            path: /uploads/media # http://media.sonata-project.org/
-#
-#    filesystem:
-#        local:
-#            directory:  %kernel.root_dir%/../web/uploads/media
-#            create:     false
+
 sonata_user:
     security_acl: true
     manager_type: orm # can be orm or mongodb      
