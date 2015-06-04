@@ -57,6 +57,8 @@ sonata_admin:
                 items:
 #                    - sonata.news.admin.comment
 #                    - sonata.news.admin.post
+                    - app.admin.site
+                    - app.admin.page
                     - sonata.media.admin.media
                     - sonata.media.admin.gallery
 #                    - sonata.comment.admin.thread

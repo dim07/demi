@@ -12,6 +12,7 @@ imports:
     - { resource: sonata_seo.yml }
     - { resource: assetic.yml }
     #- { resource: sonata_translation.yml }
+#    - { resource: ../AppBundle/Resources/config/services.yml }
 
 framework:
     #esi:             ~
@@ -92,7 +93,7 @@ doctrine:
                     SonataUserBundle: ~
 #                    ApplicationSonataMediaBundle: ~
 #                    SonataMediaBundle: ~
-                    #AppBundle: annotations
+                    AppBundle: annotation
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

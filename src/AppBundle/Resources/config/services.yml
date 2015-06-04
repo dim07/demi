@@ -1,0 +1,12 @@
+services:
+    app.admin.site:
+        class: AppBundle\Admin\SiteAdmin
+        arguments: [~, AppBundle\Entity\Site, AppBundle:SiteAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Site}
+
+    app.admin.page:
+        class: AppBundle\Admin\PageAdmin
+        arguments: [~, AppBundle\Entity\Page, AppBundle:PageAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Page}
